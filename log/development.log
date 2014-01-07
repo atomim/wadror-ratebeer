@@ -1,0 +1,1697 @@
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2014-01-06 04:06:01 +0200
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (5ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-06 04:11:18 +0200
+Connecting to database specified by database.yml
+Processing by BreweriesController#index as HTML
+Completed 500 Internal Server Error in 54ms
+
+ActiveRecord::StatementInvalid (Could not find table 'breweries'):
+  app/controllers/breweries_controller.rb:5:in `index'
+
+
+  Rendered /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (12.8ms)
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (138.0ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (101.7ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (1.5ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Migrating to CreateBreweries (20140106021031)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  CREATE TABLE "breweries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "year" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140106021031')[0m
+  [1m[35m (103.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-06 04:11:40 +0200
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (0.1ms)[0m  [1mSELECT "breweries".* FROM "breweries" [0m
+  Rendered breweries/index.html.erb within layouts/application (1.3ms)
+Compiled breweries.css  (15ms)  (pid 17105)
+Compiled scaffolds.css  (13ms)  (pid 17105)
+Compiled application.css  (72ms)  (pid 17105)
+Compiled jquery.js  (2ms)  (pid 17105)
+Compiled jquery_ujs.js  (0ms)  (pid 17105)
+Compiled breweries.js  (554ms)  (pid 17105)
+Compiled application.js  (613ms)  (pid 17105)
+Completed 200 OK in 751ms (Views: 747.0ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-06 04:11:41 +0200
+Served asset /application.css - 200 OK (7ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-06 04:11:41 +0200
+Served asset /breweries.css - 200 OK (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-06 04:11:41 +0200
+Served asset /application.js - 200 OK (13ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-06 04:11:41 +0200
+Served asset /scaffolds.css - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-06 04:11:41 +0200
+Served asset /jquery_ujs.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-06 04:11:41 +0200
+Served asset /jquery.js - 200 OK (3ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-06 04:11:41 +0200
+Served asset /breweries.js - 200 OK (1ms)
+
+
+Started GET "/breweries/new" for 127.0.0.1 at 2014-01-06 04:11:43 +0200
+Processing by BreweriesController#new as HTML
+  Rendered breweries/_form.html.erb (8.7ms)
+  Rendered breweries/new.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 29ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/breweries" for 127.0.0.1 at 2014-01-06 04:11:56 +0200
+Processing by BreweriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QUAsmCIy5rET4r32BSG2ir+Ixa6pC2sOzIO9lSHlI1g=", "brewery"=>{"name"=>"kumpula", "year"=>"2004"}, "commit"=>"Create Brewery"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (6.5ms)[0m  [1mINSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)[0m  [["created_at", Mon, 06 Jan 2014 02:11:56 UTC +00:00], ["name", "kumpula"], ["updated_at", Mon, 06 Jan 2014 02:11:56 UTC +00:00], ["year", 2004]]
+  [1m[35m (147.1ms)[0m  commit transaction
+Redirected to http://localhost:3000/breweries/1
+Completed 302 Found in 186ms (ActiveRecord: 153.7ms)
+
+
+Started GET "/breweries/1" for 127.0.0.1 at 2014-01-06 04:11:57 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBrewery Load (0.3ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered breweries/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-06 04:11:57 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-06 04:11:57 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-06 04:11:57 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-06 04:12:10 +0200
+Processing by BreweriesController#index as HTML
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" 
+  Rendered breweries/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:10 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:10 +0200
+Served asset /scaffolds.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-06 04:12:10 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/breweries/new" for 127.0.0.1 at 2014-01-06 04:12:12 +0200
+Processing by BreweriesController#new as HTML
+  Rendered breweries/_form.html.erb (2.4ms)
+  Rendered breweries/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:12 +0200
+Served asset /breweries.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:12 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-06 04:12:12 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started POST "/breweries" for 127.0.0.1 at 2014-01-06 04:12:22 +0200
+Processing by BreweriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QUAsmCIy5rET4r32BSG2ir+Ixa6pC2sOzIO9lSHlI1g=", "brewery"=>{"name"=>"asdf", "year"=>"1989"}, "commit"=>"Create Brewery"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)  [["created_at", Mon, 06 Jan 2014 02:12:22 UTC +00:00], ["name", "asdf"], ["updated_at", Mon, 06 Jan 2014 02:12:22 UTC +00:00], ["year", 1989]]
+  [1m[36m (225.7ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/breweries/2
+Completed 302 Found in 229ms (ActiveRecord: 226.3ms)
+
+
+Started GET "/breweries/2" for 127.0.0.1 at 2014-01-06 04:12:23 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mBrewery Load (0.1ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1  [["id", "2"]]
+  Rendered breweries/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:23 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-06 04:12:23 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:23 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-06 04:12:25 +0200
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" [0m
+  Rendered breweries/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:25 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:25 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-06 04:12:25 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/breweries/new" for 127.0.0.1 at 2014-01-06 04:12:26 +0200
+Processing by BreweriesController#new as HTML
+  Rendered breweries/_form.html.erb (2.3ms)
+  Rendered breweries/new.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 8ms (Views: 8.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:26 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:26 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-06 04:12:26 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started POST "/breweries" for 127.0.0.1 at 2014-01-06 04:12:34 +0200
+Processing by BreweriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QUAsmCIy5rET4r32BSG2ir+Ixa6pC2sOzIO9lSHlI1g=", "brewery"=>{"name"=>"retet", "year"=>"1899"}, "commit"=>"Create Brewery"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)[0m  [["created_at", Mon, 06 Jan 2014 02:12:34 UTC +00:00], ["name", "retet"], ["updated_at", Mon, 06 Jan 2014 02:12:34 UTC +00:00], ["year", 1899]]
+  [1m[35m (230.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/breweries/3
+Completed 302 Found in 233ms (ActiveRecord: 230.8ms)
+
+
+Started GET "/breweries/3" for 127.0.0.1 at 2014-01-06 04:12:35 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBrewery Load (0.1ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered breweries/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:35 +0200
+Served asset /breweries.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:35 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-06 04:12:35 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-06 04:12:35 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-06 04:12:35 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-06 04:12:35 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-06 04:12:35 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/breweries/3" for 127.0.0.1 at 2014-01-07 02:30:37 +0200
+Connecting to database specified by database.yml
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", "3"]]
+  Rendered breweries/show.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 240ms (Views: 178.3ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-07 02:30:40 +0200
+Processing by BreweriesController#index as HTML
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" 
+  Rendered breweries/index.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-07 02:30:40 +0200
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-07 02:30:40 +0200
+Served asset /breweries.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-07 02:30:40 +0200
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-07 02:30:40 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-07 02:30:40 +0200
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-07 02:30:40 +0200
+Served asset /breweries.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-07 02:30:40 +0200
+Served asset /application.js - 304 Not Modified (8ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (1.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateBreweries (20140106021031)
+Migrating to CreateBeers (20140107010418)
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.7ms)[0m  CREATE TABLE "beers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "style" varchar(255), "brewery_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20140107010418')[0m
+  [1m[35m (107.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+  [1m[36m (1.4ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (5.0ms)[0m  [1mINSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00], ["name", "Koff"], ["updated_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00], ["year", 1897]]
+  [1m[35m (140.1ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)  [["created_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00], ["name", "Malmgard"], ["updated_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00], ["year", 2001]]
+  [1m[36m (106.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00], ["name", "Weihenstephaner"], ["updated_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00], ["year", 1042]]
+  [1m[35m (82.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)  [["brewery_id", 7], ["created_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00], ["name", "Iso 3"], ["style", "Lager"], ["updated_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00]]
+  [1m[36m (102.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["brewery_id", 7], ["created_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00], ["name", "Karhu"], ["style", "Lager"], ["updated_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00]]
+  [1m[35m (96.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)  [["brewery_id", 7], ["created_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00], ["name", "Tuplahumala"], ["style", "Lager"], ["updated_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00]]
+  [1m[36m (98.5ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["brewery_id", 8], ["created_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00], ["name", "Huvila Pale Ale"], ["style", "Pale Ale"], ["updated_at", Tue, 07 Jan 2014 01:12:36 UTC +00:00]]
+  [1m[35m (98.2ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)  [["brewery_id", 8], ["created_at", Tue, 07 Jan 2014 01:12:37 UTC +00:00], ["name", "X Porter"], ["style", "Porter"], ["updated_at", Tue, 07 Jan 2014 01:12:37 UTC +00:00]]
+  [1m[36m (98.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["brewery_id", 9], ["created_at", Tue, 07 Jan 2014 01:12:37 UTC +00:00], ["name", "Hefezeizen"], ["style", "Weizen"], ["updated_at", Tue, 07 Jan 2014 01:12:37 UTC +00:00]]
+  [1m[35m (106.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)  [["brewery_id", 9], ["created_at", Tue, 07 Jan 2014 01:12:37 UTC +00:00], ["name", "Helles"], ["style", "Lager"], ["updated_at", Tue, 07 Jan 2014 01:12:37 UTC +00:00]]
+  [1m[36m (106.7ms)[0m  [1mcommit transaction[0m
+Connecting to database specified by database.yml
+  [1m[36m (32.2ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (83.0ms)[0m  CREATE TABLE "beers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "style" varchar(255), "brewery_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (99.5ms)[0m  [1mCREATE TABLE "breweries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "year" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (108.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) 
+  [1m[36m (116.9ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35m (0.1ms)[0m  SELECT version FROM "schema_migrations"
+  [1m[36m (116.7ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20140107010418')[0m
+  [1m[35m (108.9ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20140106021031')
+  [1m[36m (1.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (4.8ms)[0m  [1mINSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 07 Jan 2014 01:12:50 UTC +00:00], ["name", "Koff"], ["updated_at", Tue, 07 Jan 2014 01:12:50 UTC +00:00], ["year", 1897]]
+  [1m[35m (94.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)  [["created_at", Tue, 07 Jan 2014 01:12:50 UTC +00:00], ["name", "Malmgard"], ["updated_at", Tue, 07 Jan 2014 01:12:50 UTC +00:00], ["year", 2001]]
+  [1m[36m (98.1ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)[0m  [["created_at", Tue, 07 Jan 2014 01:12:50 UTC +00:00], ["name", "Weihenstephaner"], ["updated_at", Tue, 07 Jan 2014 01:12:50 UTC +00:00], ["year", 1042]]
+  [1m[35m (98.6ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)  [["brewery_id", 1], ["created_at", Tue, 07 Jan 2014 01:12:50 UTC +00:00], ["name", "Iso 3"], ["style", "Lager"], ["updated_at", Tue, 07 Jan 2014 01:12:50 UTC +00:00]]
+  [1m[36m (109.6ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["brewery_id", 1], ["created_at", Tue, 07 Jan 2014 01:12:51 UTC +00:00], ["name", "Karhu"], ["style", "Lager"], ["updated_at", Tue, 07 Jan 2014 01:12:51 UTC +00:00]]
+  [1m[35m (122.8ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)  [["brewery_id", 1], ["created_at", Tue, 07 Jan 2014 01:12:51 UTC +00:00], ["name", "Tuplahumala"], ["style", "Lager"], ["updated_at", Tue, 07 Jan 2014 01:12:51 UTC +00:00]]
+  [1m[36m (123.4ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["brewery_id", 2], ["created_at", Tue, 07 Jan 2014 01:12:51 UTC +00:00], ["name", "Huvila Pale Ale"], ["style", "Pale Ale"], ["updated_at", Tue, 07 Jan 2014 01:12:51 UTC +00:00]]
+  [1m[35m (114.9ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)  [["brewery_id", 2], ["created_at", Tue, 07 Jan 2014 01:12:51 UTC +00:00], ["name", "X Porter"], ["style", "Porter"], ["updated_at", Tue, 07 Jan 2014 01:12:51 UTC +00:00]]
+  [1m[36m (98.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["brewery_id", 3], ["created_at", Tue, 07 Jan 2014 01:12:51 UTC +00:00], ["name", "Hefezeizen"], ["style", "Weizen"], ["updated_at", Tue, 07 Jan 2014 01:12:51 UTC +00:00]]
+  [1m[35m (101.3ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)  [["brewery_id", 3], ["created_at", Tue, 07 Jan 2014 01:12:51 UTC +00:00], ["name", "Helles"], ["style", "Lager"], ["updated_at", Tue, 07 Jan 2014 01:12:51 UTC +00:00]]
+  [1m[36m (98.5ms)[0m  [1mcommit transaction[0m
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-07 23:59:51 +0200
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (0.1ms)[0m  [1mSELECT "breweries".* FROM "breweries" [0m
+  Rendered breweries/index.html.erb within layouts/application (4.3ms)
+Compiled beers.css  (93ms)  (pid 1606)
+Compiled application.css  (103ms)  (pid 1606)
+Compiled beers.js  (644ms)  (pid 1606)
+Compiled application.js  (655ms)  (pid 1606)
+Completed 200 OK in 854ms (Views: 845.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-07 23:59:52 +0200
+Served asset /application.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-07 23:59:52 +0200
+Served asset /beers.css - 200 OK (14ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-07 23:59:52 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-07 23:59:52 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-07 23:59:52 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-07 23:59:52 +0200
+Served asset /beers.js - 200 OK (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-07 23:59:52 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-07 23:59:52 +0200
+Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-07 23:59:52 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-08 00:06:40 +0200
+Processing by BreweriesController#index as HTML
+  [1m[35mBrewery Load (0.6ms)[0m  SELECT "breweries".* FROM "breweries" 
+  Rendered breweries/index.html.erb within layouts/application (5.2ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:06:40 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:06:40 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:06:40 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:06:40 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:06:40 +0200
+Served asset /breweries.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:06:40 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:06:40 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:06:40 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:06:40 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/breweries/1" for 127.0.0.1 at 2014-01-08 00:06:41 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBrewery Load (0.3ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered breweries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:06:41 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:06:41 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:06:41 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:06:41 +0200
+Served asset /breweries.js - 304 Not Modified (32ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:06:41 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:06:41 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:06:41 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:06:41 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:06:41 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/breweries/1" for 127.0.0.1 at 2014-01-08 00:14:01 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = 1[0m
+  Rendered breweries/show.html.erb within layouts/application (59.5ms)
+Completed 200 OK in 67ms (Views: 65.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:14:01 +0200
+Served asset /application.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:14:01 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:14:01 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:14:01 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:14:01 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:14:01 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:14:01 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:14:01 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:14:01 +0200
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/breweries/1" for 127.0.0.1 at 2014-01-08 00:15:05 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBrewery Load (0.1ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = 1[0m
+  Rendered breweries/show.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:15:05 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:15:05 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:15:05 +0200
+Served asset /breweries.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:15:05 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:05 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:05 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:05 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:05 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:05 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/breweries/1" for 127.0.0.1 at 2014-01-08 00:15:13 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBrewery Load (0.1ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = 1[0m
+  Rendered breweries/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:15:13 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:15:13 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:15:13 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:15:13 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:13 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:13 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:13 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:13 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:13 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/breweries/1" for 127.0.0.1 at 2014-01-08 00:15:47 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = 1[0m
+  [1m[35mBeer Load (0.3ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = 1
+  Rendered breweries/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 21ms (Views: 18.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:15:47 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:15:47 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:47 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:47 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:15:47 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:15:47 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:47 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:47 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:15:47 +0200
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/breweries/1" for 127.0.0.1 at 2014-01-08 00:16:01 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = 1
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = 1[0m
+  Rendered breweries/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:16:01 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:16:01 +0200
+Served asset /beers.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:16:01 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:01 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:16:01 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:01 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:01 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:01 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:01 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/breweries/1" for 127.0.0.1 at 2014-01-08 00:16:33 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBrewery Load (0.1ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = 1[0m
+  [1m[35mBeer Load (0.2ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = 1
+  Rendered breweries/show.html.erb within layouts/application (65.5ms)
+Completed 500 Internal Server Error in 69ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    12: 
+    13: <p>
+    14:  <% @brewery.beers.each do |beer| %>
+    15:    <%= link_to beer.name beer%>
+    16:  <% end %>
+    17: </p>
+    18: 
+  app/views/breweries/show.html.erb:15:in `block in _app_views_breweries_show_html_erb__26176149633981738_70151011783740'
+  app/views/breweries/show.html.erb:14:in `_app_views_breweries_show_html_erb__26176149633981738_70151011783740'
+  app/controllers/breweries_controller.rb:18:in `show'
+
+
+  Rendered /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.6ms)
+  Rendered /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+  Rendered /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.1ms)
+
+
+Started GET "/breweries/1" for 127.0.0.1 at 2014-01-08 00:16:47 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBrewery Load (0.1ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = 1
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = 1[0m
+  Rendered breweries/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 16ms (Views: 13.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:16:47 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:16:47 +0200
+Served asset /breweries.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:16:47 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:16:47 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:47 +0200
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:47 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:47 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:47 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:47 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/beers/1" for 127.0.0.1 at 2014-01-08 00:16:49 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBeer Load (0.2ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered beers/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:16:49 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:16:49 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:16:49 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:49 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:16:49 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:49 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:49 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:49 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:16:49 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-08 00:18:41 +0200
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" [0m
+  Rendered breweries/index.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:18:41 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:18:41 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:18:41 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:18:41 +0200
+Served asset /scaffolds.css - 304 Not Modified (40ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:18:41 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:18:41 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:18:41 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:18:41 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:18:41 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2014-01-08 00:18:43 +0200
+Processing by BeersController#index as HTML
+  [1m[35mBeer Load (0.2ms)[0m  SELECT "beers".* FROM "beers" 
+  Rendered beers/index.html.erb within layouts/application (7.2ms)
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:18:43 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:18:43 +0200
+Served asset /beers.css - 304 Not Modified (7ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:18:43 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:18:43 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:18:43 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:18:43 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:18:43 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:18:43 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:18:43 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2014-01-08 00:19:32 +0200
+Processing by BeersController#index as HTML
+  [1m[36mBeer Load (0.3ms)[0m  [1mSELECT "beers".* FROM "beers" [0m
+  Rendered beers/index.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:19:32 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:19:32 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:19:32 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:19:32 +0200
+Served asset /breweries.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:19:32 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:19:32 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:19:32 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:19:32 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:19:32 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-08 00:19:33 +0200
+Processing by BreweriesController#index as HTML
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" 
+  Rendered breweries/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:19:33 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:19:33 +0200
+Served asset /breweries.css - 304 Not Modified (12ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:19:33 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:19:33 +0200
+Served asset /scaffolds.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:19:33 +0200
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:19:33 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:19:33 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:19:33 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:19:33 +0200
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2014-01-08 00:20:34 +0200
+Processing by BeersController#index as HTML
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT "beers".* FROM "beers" [0m
+  Rendered beers/index.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 16ms (Views: 14.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:20:34 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:20:34 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:20:34 +0200
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:20:34 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:20:34 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:20:34 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:20:34 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:20:34 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:20:34 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2014-01-08 00:21:15 +0200
+Processing by BeersController#index as HTML
+  [1m[35mBeer Load (0.2ms)[0m  SELECT "beers".* FROM "beers" 
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 1 LIMIT 1[0m
+  Rendered beers/index.html.erb within layouts/application (41.1ms)
+Completed 500 Internal Server Error in 45ms
+
+ActionView::Template::Error (undefined local variable or method `brewery' for #<#<Class:0x007f9a940d08f0>:0x007f9aa4a00aa0>):
+    14:   <tr>
+    15:     <td><%= beer.name %></td>
+    16:     <td><%= beer.style %></td>
+    17:     <td><%= link_to beer.brewery.name, brewery %></td>
+    18:     <td><%= link_to 'Show', beer %></td>
+    19:     <td><%= link_to 'Edit', edit_beer_path(beer) %></td>
+    20:     <td><%= link_to 'Destroy', beer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  app/views/beers/index.html.erb:17:in `block in _app_views_beers_index_html_erb__639153897191363849_70151077032320'
+  app/views/beers/index.html.erb:13:in `each'
+  app/views/beers/index.html.erb:13:in `_app_views_beers_index_html_erb__639153897191363849_70151077032320'
+  app/controllers/beers_controller.rb:7:in `index'
+
+
+  Rendered /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+  Rendered /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/actionpack-3.2.14/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (9.3ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2014-01-08 00:21:24 +0200
+Processing by BeersController#index as HTML
+  [1m[35mBeer Load (0.2ms)[0m  SELECT "beers".* FROM "beers" 
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 1 LIMIT 1[0m
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 2 LIMIT 1[0m
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 3 LIMIT 1[0m
+  Rendered beers/index.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 27ms (Views: 24.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:21:24 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:21:24 +0200
+Served asset /beers.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:21:24 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:21:24 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:21:24 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:21:24 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:21:24 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:21:24 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:21:24 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/breweries/1" for 127.0.0.1 at 2014-01-08 00:21:27 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBrewery Load (0.1ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1  [["id", "1"]]
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = 1[0m
+  [1m[35mBeer Load (0.2ms)[0m  SELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = 1
+  Rendered breweries/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:21:27 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:21:27 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:21:27 +0200
+Served asset /breweries.css - 304 Not Modified (39ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:21:27 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:21:27 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:21:27 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:21:27 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:21:27 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:21:27 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/breweries/1" for 127.0.0.1 at 2014-01-08 00:22:32 +0200
+Processing by BreweriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBrewery Load (0.1ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "beers" WHERE "beers"."brewery_id" = 1
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."brewery_id" = 1[0m
+  Rendered breweries/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:32 +0200
+Served asset /application.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:32 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:32 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:32 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:32 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:32 +0200
+Served asset /beers.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:32 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:32 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:32 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-08 00:22:35 +0200
+Processing by BreweriesController#index as HTML
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" 
+  Rendered breweries/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:35 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:35 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:35 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:35 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:35 +0200
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:35 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:35 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:35 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:35 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2014-01-08 00:22:39 +0200
+Processing by BeersController#index as HTML
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT "beers".* FROM "beers" [0m
+  [1m[35mBrewery Load (0.3ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 1 LIMIT 1
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 2 LIMIT 1
+  [1m[36mBrewery Load (0.1ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 3 LIMIT 1
+  Rendered beers/index.html.erb within layouts/application (16.4ms)
+Completed 200 OK in 23ms (Views: 21.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:39 +0200
+Served asset /beers.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:39 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:39 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:39 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:39 +0200
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:39 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:39 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:39 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:39 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/beers" for 127.0.0.1 at 2014-01-08 00:22:40 +0200
+Processing by BeersController#index as HTML
+  [1m[36mBeer Load (0.2ms)[0m  [1mSELECT "beers".* FROM "beers" [0m
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 1 LIMIT 1
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 2 LIMIT 1
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "breweries".* FROM "breweries" WHERE "breweries"."id" = 3 LIMIT 1
+  Rendered beers/index.html.erb within layouts/application (16.2ms)
+Completed 200 OK in 24ms (Views: 21.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:40 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:40 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:40 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:40 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:40 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:40 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:40 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:40 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:40 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/beers/2" for 127.0.0.1 at 2014-01-08 00:22:42 +0200
+Processing by BeersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBeer Load (0.1ms)[0m  [1mSELECT "beers".* FROM "beers" WHERE "beers"."id" = ? LIMIT 1[0m  [["id", "2"]]
+  Rendered beers/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:42 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:42 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:42 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:42 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:22:42 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:42 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:42 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:42 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:22:42 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-08 00:29:31 +0200
+Processing by BreweriesController#index as HTML
+  [1m[35mBrewery Load (0.1ms)[0m  SELECT "breweries".* FROM "breweries" 
+  Rendered breweries/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 19ms (Views: 10.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:29:31 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:29:31 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:29:31 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:29:31 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:29:31 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:29:31 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:29:31 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:29:31 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:29:31 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-08 00:29:32 +0200
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" [0m
+  Rendered breweries/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 44ms (Views: 42.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:29:32 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:29:32 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:29:32 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:29:32 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:29:32 +0200
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:29:32 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:29:32 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:29:32 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:29:32 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-08 00:30:28 +0200
+Processing by BreweriesController#index as HTML
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" 
+  Rendered breweries/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:28 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:28 +0200
+Served asset /beers.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:28 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:28 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:28 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:28 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:28 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:28 +0200
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:28 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" [0m
+  Rendered breweries/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Processing by BreweriesController#index as HTML
+  [1m[35mBrewery Load (0.2ms)[0m  SELECT "breweries".* FROM "breweries" 
+  Rendered breweries/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /breweries.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /jquery.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/breweries" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Processing by BreweriesController#index as HTML
+  [1m[36mBrewery Load (0.2ms)[0m  [1mSELECT "breweries".* FROM "breweries" [0m
+  Rendered breweries/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /application.css - 304 Not Modified (45ms)
+
+
+Started GET "/assets/breweries.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /breweries.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.css?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /beers.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/beers.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /beers.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/breweries.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /breweries.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2014-01-08 00:30:29 +0200
+Served asset /application.js - 304 Not Modified (1ms)
