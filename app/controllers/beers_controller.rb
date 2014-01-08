@@ -25,6 +25,8 @@ class BeersController < ApplicationController
   # GET /beers/new.json
   def new
     @beer = Beer.new
+   @breweries = Brewery.all
+   @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
 
     respond_to do |format|
       format.html # new.html.erb
@@ -51,6 +53,7 @@ class BeersController < ApplicationController
         format.json { render json: @beer.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PUT /beers/1

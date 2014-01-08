@@ -1,8 +1,14 @@
 Ratebeer::Application.routes.draw do
+
+  root :to => 'breweries#index'
+
+  resources :ratings, :only => [:index, :new, :create, :destroy]
+
   resources :beers
 
 
   resources :breweries
+
 
 
   # The priority is based upon order of creation:

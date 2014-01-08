@@ -1,0 +1,77 @@
+[atomim@delli ror-wk1]$ rails c
+Loading development environment (Rails 3.2.14)
+irb(main):001:0> b = Beer.all.first
+  Beer Load (0.1ms)  SELECT "beers".* FROM "beers" 
+=> #<Beer id: 1, name: "Iso 3", style: "Lager", brewery_id: 1, created_at: "2014-01-07 01:12:50", updated_at: "2014-01-07 01:12:50">
+irb(main):002:0> b.ratings.create :score 10
+SyntaxError: (irb):2: syntax error, unexpected tINTEGER, expecting $end
+	from /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:47:in `start'
+	from /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:8:in `start'
+	from /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+irb(main):003:0> b.ratings.create :score => 10
+   (0.1ms)  begin transaction
+  SQL (5.0ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 1], ["created_at", Tue, 07 Jan 2014 23:50:33 UTC +00:00], ["score", 10], ["updated_at", Tue, 07 Jan 2014 23:50:33 UTC +00:00]]
+   (129.8ms)  commit transaction
+=> #<Rating id: 1, score: 10, beer_id: 1, created_at: "2014-01-07 23:50:33", updated_at: "2014-01-07 23:50:33">
+irb(main):004:0> b.ratings.create :score => 21
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 1], ["created_at", Tue, 07 Jan 2014 23:50:39 UTC +00:00], ["score", 21], ["updated_at", Tue, 07 Jan 2014 23:50:39 UTC +00:00]]
+   (104.2ms)  commit transaction
+=> #<Rating id: 2, score: 21, beer_id: 1, created_at: "2014-01-07 23:50:39", updated_at: "2014-01-07 23:50:39">
+irb(main):005:0> b.ratings.create :score => 17
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 1], ["created_at", Tue, 07 Jan 2014 23:50:43 UTC +00:00], ["score", 17], ["updated_at", Tue, 07 Jan 2014 23:50:43 UTC +00:00]]
+   (116.8ms)  commit transaction
+=> #<Rating id: 3, score: 17, beer_id: 1, created_at: "2014-01-07 23:50:43", updated_at: "2014-01-07 23:50:43">
+irb(main):006:0> b.ratings
+  Rating Load (0.2ms)  SELECT "ratings".* FROM "ratings" WHERE "ratings"."beer_id" = 1
+=> [#<Rating id: 1, score: 10, beer_id: 1, created_at: "2014-01-07 23:50:33", updated_at: "2014-01-07 23:50:33">, #<Rating id: 2, score: 21, beer_id: 1, created_at: "2014-01-07 23:50:39", updated_at: "2014-01-07 23:50:39">, #<Rating id: 3, score: 17, beer_id: 1, created_at: "2014-01-07 23:50:43", updated_at: "2014-01-07 23:50:43">]
+irb(main):007:0> b = Brewery.create :name "Brewdog", :year 2007
+SyntaxError: (irb):7: syntax error, unexpected tSTRING_BEG, expecting $end
+b = Brewery.create :name "Brewdog", :year 2007
+                          ^
+	from /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:47:in `start'
+	from /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands/console.rb:8:in `start'
+	from /home/atomim/.rbenv/versions/1.9.3-p327/lib/ruby/gems/1.9.1/gems/railties-3.2.14/lib/rails/commands.rb:41:in `<top (required)>'
+	from script/rails:6:in `require'
+	from script/rails:6:in `<main>'
+irb(main):008:0> b = Brewery.create :name => "Brewdog", :year => 2007
+   (0.1ms)  begin transaction
+  SQL (0.6ms)  INSERT INTO "breweries" ("created_at", "name", "updated_at", "year") VALUES (?, ?, ?, ?)  [["created_at", Tue, 07 Jan 2014 23:52:20 UTC +00:00], ["name", "Brewdog"], ["updated_at", Tue, 07 Jan 2014 23:52:20 UTC +00:00], ["year", 2007]]
+   (97.8ms)  commit transaction
+=> #<Brewery id: 4, name: "Brewdog", year: 2007, created_at: "2014-01-07 23:52:20", updated_at: "2014-01-07 23:52:20">
+irb(main):009:0> b
+=> #<Brewery id: 4, name: "Brewdog", year: 2007, created_at: "2014-01-07 23:52:20", updated_at: "2014-01-07 23:52:20">
+irb(main):010:0> ipa = b.beers.create :name=> "Punk IPA", :style => "IPA"
+   (0.1ms)  begin transaction
+  SQL (0.5ms)  INSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)  [["brewery_id", 4], ["created_at", Tue, 07 Jan 2014 23:53:29 UTC +00:00], ["name", "Punk IPA"], ["style", "IPA"], ["updated_at", Tue, 07 Jan 2014 23:53:29 UTC +00:00]]
+   (106.5ms)  commit transaction
+=> #<Beer id: 8, name: "Punk IPA", style: "IPA", brewery_id: 4, created_at: "2014-01-07 23:53:29", updated_at: "2014-01-07 23:53:29">
+irb(main):011:0> ipa.ratings.create :score => 18
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 8], ["created_at", Tue, 07 Jan 2014 23:53:42 UTC +00:00], ["score", 18], ["updated_at", Tue, 07 Jan 2014 23:53:42 UTC +00:00]]
+   (111.7ms)  commit transaction
+=> #<Rating id: 4, score: 18, beer_id: 8, created_at: "2014-01-07 23:53:42", updated_at: "2014-01-07 23:53:42">
+irb(main):012:0> ipa.ratings.create :score => 23
+   (0.1ms)  begin transaction
+  SQL (0.5ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 8], ["created_at", Tue, 07 Jan 2014 23:53:48 UTC +00:00], ["score", 23], ["updated_at", Tue, 07 Jan 2014 23:53:48 UTC +00:00]]
+   (127.1ms)  commit transaction
+=> #<Rating id: 5, score: 23, beer_id: 8, created_at: "2014-01-07 23:53:48", updated_at: "2014-01-07 23:53:48">
+irb(main):013:0> lo = b.beers.create :name=> "Nanny State", :style => "lowalcohol"
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "beers" ("brewery_id", "created_at", "name", "style", "updated_at") VALUES (?, ?, ?, ?, ?)  [["brewery_id", 4], ["created_at", Tue, 07 Jan 2014 23:54:17 UTC +00:00], ["name", "Nanny State"], ["style", "lowalcohol"], ["updated_at", Tue, 07 Jan 2014 23:54:17 UTC +00:00]]
+   (108.2ms)  commit transaction
+=> #<Beer id: 9, name: "Nanny State", style: "lowalcohol", brewery_id: 4, created_at: "2014-01-07 23:54:17", updated_at: "2014-01-07 23:54:17">
+irb(main):014:0> lo.ratings.create :score => 27
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 9], ["created_at", Tue, 07 Jan 2014 23:54:24 UTC +00:00], ["score", 27], ["updated_at", Tue, 07 Jan 2014 23:54:24 UTC +00:00]]
+   (108.3ms)  commit transaction
+=> #<Rating id: 6, score: 27, beer_id: 9, created_at: "2014-01-07 23:54:24", updated_at: "2014-01-07 23:54:24">
+irb(main):015:0> lo.ratings.create :score => 4
+   (0.1ms)  begin transaction
+  SQL (0.4ms)  INSERT INTO "ratings" ("beer_id", "created_at", "score", "updated_at") VALUES (?, ?, ?, ?)  [["beer_id", 9], ["created_at", Tue, 07 Jan 2014 23:54:28 UTC +00:00], ["score", 4], ["updated_at", Tue, 07 Jan 2014 23:54:28 UTC +00:00]]
+   (95.1ms)  commit transaction
+=> #<Rating id: 7, score: 4, beer_id: 9, created_at: "2014-01-07 23:54:28", updated_at: "2014-01-07 23:54:28">
+irb(main):016:0> 
