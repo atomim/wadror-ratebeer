@@ -4,7 +4,11 @@
 
 <ul>
   <% @ratings.each do |rating| %>
-    <li> <%= rating %> <%= link_to 'delete', rating_path(rating.id), :method => :delete %> </li>
+    <li> <%= link_to rating %>
+    	<% if not rating.user.nil? %>
+    		, by <%= link_to rating.user.username, rating.user%>
+    	<% end %>
+    </li>
   <% end %>
 </ul>
 

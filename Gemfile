@@ -11,7 +11,7 @@ end
 
 group :production do
    gem 'pg'
-   gem 'rails_stdout_logging' 
+   gem 'rails_stdout_logging'
 end
 
 gem 'debugger', :group => :development
@@ -29,6 +29,8 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

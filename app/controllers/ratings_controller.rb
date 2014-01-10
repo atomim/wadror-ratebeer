@@ -8,14 +8,21 @@ class RatingsController < ApplicationController
     @beers = Beer.all
   end
 
-  def create
-    Rating.create params[:rating]
-    redirect_to ratings_path
+def create
+  @rating = Rating.new params[:rating]
+
+  if @rating.save
+    current_user.ratings << @rating
+    redirect_to user_path current_user
+  else
+    @beers = Beer.all
+    render :new
   end
+end
 
   def destroy
     rating = Rating.find params[:id]
-    rating.delete
-    redirect_to ratings_path
+    rating.delete if current_user == rating.user
+    redirect_to :back
   end
 end
