@@ -10,6 +10,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 2.0'
 end
 
+group :test do
+  gem 'factory_girl_rails'
+end
+
 group :production do
    gem 'pg'
    gem 'rails_stdout_logging'
