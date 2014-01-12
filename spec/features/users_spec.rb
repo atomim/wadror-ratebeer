@@ -34,6 +34,7 @@ describe "User" do
 
   it "is able to add a beer" do
     sign_in 'Pekka', 'foobar1'
+    FactoryGirl.create(:style)
     visit new_beer_path
     fill_in('beer_name', :with => 'Juoma')
 
@@ -44,7 +45,7 @@ describe "User" do
 
   it "has favourite beer style and brewery shown" do
     sign_in 'Pekka', 'foobar1'
-    create_beer_with_rating 10,@user,{:style=>"hiaa",:brewery=>FactoryGirl.create(:brewery)}
+    create_beer_with_rating 10,@user,{:style=>Style.new(:name=>"hiaa"),:brewery=>FactoryGirl.create(:brewery)}
     visit user_path(@user)
 
 

@@ -89,10 +89,10 @@ describe User do
       expect(user.favorite_style).to eq(beer.style)
     end
     it "is of one with the highest average rating" do
-      create_beers_with_ratings :scores=>[10, 20, 15, 7, 9], :user=> user,:overrides=>{:style=>"moi"}
-      best = create_beers_with_ratings :scores=>[15, 20], :user=> user, :overrides=>{:style=>"muuh"}
+      create_beers_with_ratings :scores=>[10, 20, 15, 7, 9], :user=> user,:overrides=>{:style=>Style.new(:name=>"hiaa")}
+      best = create_beers_with_ratings :scores=>[15, 20], :user=> user, :overrides=>{:style=>Style.new(:name=>"muuh")}
 
-      expect(user.favorite_style).to eq("muuh")
+      expect(user.favorite_style.name).to eq("muuh")
     end
   end
 

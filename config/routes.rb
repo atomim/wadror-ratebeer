@@ -1,6 +1,9 @@
 Ratebeer::Application.routes.draw do
 
 
+  resources :styles
+
+
   resources :users
 
 

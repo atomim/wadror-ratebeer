@@ -4,7 +4,7 @@ describe Beer do
 
   describe "should not be created" do
     it "without a name" do
-      beer = Beer.create :style => "Moi"
+      beer = Beer.create :style=>Style.new(:name=>"Moi")
       expect(beer.valid?).to be(false)
       expect(Beer.count).to eq(0)
     end
