@@ -1,5 +1,5 @@
 class BreweriesController < ApplicationController
-  before_filter :authenticate, :only => [:new, :create, :destroy]
+  before_filter :authenticate, :only => [:destroy]
 
   # GET /breweries
   # GET /breweries.json
