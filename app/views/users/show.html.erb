@@ -9,6 +9,10 @@
       	, average <%= @user.average_rating %>
       <% end %>
     </p>
+    <% if not @user.ratings.empty? %>
+      <p><%= "favorite style: #{@user.favorite_style}"%></p>
+      <p><%= "favorite brewery: #{@user.favorite_brewery}"%></p>
+    <% end%>
 
     <ul>
       <% @user.ratings.each do |rating| %>

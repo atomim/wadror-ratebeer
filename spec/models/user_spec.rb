@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe User do
+  include OwnTestHelper
+
   it "has the username set correctly" do
     user = User.new :username => "Pekka"
 
@@ -118,14 +120,4 @@ describe User do
   end
 end
 
-def create_beers_with_ratings(params={})
-  params[:scores].each do |score|
-    create_beer_with_rating score, params[:user],params[:overrides]
-  end
-end
 
-def create_beer_with_rating(score, user, overrides={} )
-  beer = FactoryGirl.create(:beer, overrides)
-  FactoryGirl.create(:rating, :score => score,  :beer => beer, :user => user)
-  beer
-end

@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
     def create
       user = User.where(:username => params[:username]).first
       if user.nil? or not user.authenticate params[:password]
-        redirect_to :back, :notice => "username and password do not match"
+        redirect_to signin_path, :notice => "username and password do not match"
       else
         session[:user_id] = user.id
         redirect_to user_path(user), :notice => "Welcome back!"
