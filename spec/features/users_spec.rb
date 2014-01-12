@@ -10,7 +10,6 @@ describe "User" do
   describe "who has signed up" do
     it "can sign in with right credentials" do
       sign_in 'Pekka', 'foobar1'
-      puts current_path
       expect(page).to have_content 'Welcome back!'
       expect(page).to have_content 'Pekka'
     end
@@ -18,7 +17,6 @@ describe "User" do
 
   it "is redirected back to sign in form if wrong credentials given" do
     sign_in 'Pekka', 'foobar2'
-    puts current_path
     expect(current_path).to eq(signin_path)
     expect(page).to have_content 'username and password do not match'
   end

@@ -42,7 +42,6 @@ class User < ActiveRecord::Base
   end
 
   def average_for_ratings_array(ratings_array)
-    #puts ratings_array
     ratings_array.drop(1).inject(0) {|sum,rating| sum+rating.score} / ratings.count
   end
 

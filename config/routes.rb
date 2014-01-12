@@ -1,5 +1,6 @@
 Ratebeer::Application.routes.draw do
 
+
   resources :users
 
 
@@ -12,10 +13,13 @@ Ratebeer::Application.routes.draw do
   get 'signin', to: 'sessions#new'
   delete 'signout', to: 'sessions#destroy'
 
+  get 'places' => 'places#index'
+
+  post 'places' => 'places#search'
+
   resources :sessions, :only => [:new, :create, :destroy]
 
   resources :beers
-
 
   resources :breweries
 
