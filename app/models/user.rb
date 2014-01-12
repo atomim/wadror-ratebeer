@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
   include RatingAverage
-  attr_accessible :username, :password, :password_confirmation
+  attr_accessible :username, :password, :password_confirmation, :admin
   has_secure_password
 
   has_many :ratings, :dependent => :destroy
@@ -50,5 +50,6 @@ class User < ActiveRecord::Base
     if (password =~ /\d/).nil?
       errors.add(:password, "password must not consist of only letters")
     end
+    true
   end
 end
