@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<% if not @place.nil? %>
+  <h2><%= @place.name %></h2>
+  <p><%= @place.street %></p>
+  <% ["overall","selection","service","atmosphere","food"].each do |crit| %>
+  <p><%= "#{crit.to_s}: #{@score[crit]}" %></p>
+  <% end %>
+  <iframe src=<%= @place.blogmap %>/>
+<% end %>

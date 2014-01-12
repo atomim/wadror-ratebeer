@@ -13,9 +13,9 @@ Ratebeer::Application.routes.draw do
   get 'signin', to: 'sessions#new'
   delete 'signout', to: 'sessions#destroy'
 
-  get 'places' => 'places#index'
+  resources :places, :only => [:index, :show]
 
-  post 'places' => 'places#search'
+  post "places" => "places#search"
 
   resources :sessions, :only => [:new, :create, :destroy]
 
