@@ -1,10 +1,13 @@
 language: ruby
-
 rvm:
- - 1.9.3
-
+- 1.9.3
 script:
- - bundle exec rake db:migrate --trace
- - RAILS_ENV=test bundle exec rake db:migrate --trace
- - bundle exec rake db:test:prepare
- - bundle exec rspec -f d spec/
+- bundle exec rake db:migrate --trace
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec -f d spec/
+deploy:
+  provider: heroku
+  app: desolate-island-6804
+  api_key:
+    secure: hv0e9cfYTA4wwLo/LKwIJIwRaUmCDKxiOkb13uxIm0Iz0o80PRSp7cG0v9xp/ikFpqVM/KkITOzXkJ2UdWxfWKM5VkCgyYh1d3kfw/gEwSZJeTJK2U0VbSp7e/jQplpkB53WHm5jBDgKaBkWyt5tY+mCPoCxGiZOOrQAqNjjUiU=
