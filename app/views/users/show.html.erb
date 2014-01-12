@@ -3,7 +3,7 @@
 <h2>
   <%= @user.username %>
 </h2>
-  <tr>
+
     <p> has given <%= pluralize(@user.ratings.count, 'rating') %>
       <% if not @user.ratings.empty? %>
       	, average <%= @user.average_rating %>
@@ -14,17 +14,17 @@
       <p><%= "favorite brewery: #{@user.favorite_brewery}"%></p>
     <% end%>
 
-    <ul>
+    <table class="table table-hover">
       <% @user.ratings.each do |rating| %>
-        <li> <%= rating %> 
+        <tr> <td> <%= rating %> 
           <% if currently_signed_in?(rating.user) %>
             <%= link_to 'delete', rating, :method => :delete, :data => { :confirm => 'Are you sure?' } %> 
-          <% end %>
-       </li> 
+          <% end %></td>
+        </tr>
       <% end %>
-    </ul>
+    </table>
 
 <% if currently_signed_in?(@user) %>
-  <%= link_to 'Edit', edit_user_path(@user) %> |
-  <%= link_to 'Destroy',@user, method: :delete, data: { confirm: 'Are you sure?' } %> |
+  <%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-primary" %>
+  <%= link_to 'Destroy',@user, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
 <% end %>

@@ -19,5 +19,5 @@
   </table>
 <% end %>
 
-<%= link_to 'Edit', edit_style_path(@style) %> |
-<%= link_to 'Back', styles_path %>
+<%= link_to 'Edit', edit_style_path(@style), :class => "btn btn-primary" %>
+<%= link_to 'Destroy', @style, method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %>
